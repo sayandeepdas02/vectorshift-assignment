@@ -1,0 +1,93 @@
+/* BaseNode.module.css */
+
+.nodeContainer {
+  width: 240px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px var(--shadow-sm), 0 2px 4px -1px var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+}
+
+.nodeContainer:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 25px -5px var(--shadow-md), 0 10px 10px -5px var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+/* Dark mode specific glow effect */
+:root[data-theme="dark"] .nodeContainer {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .nodeContainer:hover {
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4),
+    0 0 12px rgba(139, 92, 246, 0.3),
+    0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+.nodeHeader {
+  padding: 8px 12px;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-primary);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nodeBody {
+  padding: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.handle {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: var(--text-muted) !important;
+  border: 2px solid var(--bg-secondary) !important;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.handle:hover {
+  background-color: var(--accent-primary) !important;
+}
+
+.inputField,
+.selectField {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid var(--border-secondary);
+  border-radius: 4px;
+  font-size: 12px;
+  box-sizing: border-box;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField:focus,
+.selectField:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: var(--text-muted);
+}

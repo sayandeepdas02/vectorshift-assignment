@@ -1,0 +1,134 @@
+/* ReactFlow Dark Mode Overrides */
+/* This file contains dark mode specific styles for ReactFlow components */
+
+/* ===== EDGES / CONNECTORS ===== */
+:root[data-theme="dark"] .react-flow__edge-path {
+    stroke: rgba(139, 92, 246, 0.5);
+    stroke-width: 2;
+}
+
+:root[data-theme="dark"] .react-flow__edge.selected .react-flow__edge-path,
+:root[data-theme="dark"] .react-flow__edge:hover .react-flow__edge-path {
+    stroke: rgba(139, 92, 246, 0.8);
+    stroke-width: 2.5;
+}
+
+:root[data-theme="dark"] .react-flow__edge-textbg {
+    fill: #1a1a1a;
+}
+
+:root[data-theme="dark"] .react-flow__edge-text {
+    fill: #cbd5e1;
+}
+
+:root[data-theme="dark"] .react-flow__connection-path {
+    stroke: rgba(139, 92, 246, 0.6);
+    stroke-width: 2;
+}
+
+/* ===== CONTROLS ===== */
+:root[data-theme="dark"] .react-flow__controls {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.15);
+}
+
+:root[data-theme="dark"] .react-flow__controls-button {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+:root[data-theme="dark"] .react-flow__controls-button:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+}
+
+:root[data-theme="dark"] .react-flow__controls-button svg {
+    fill: currentColor;
+}
+
+/* ===== MINIMAP ===== */
+:root[data-theme="dark"] .react-flow__minimap {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.15);
+}
+
+:root[data-theme="dark"] .react-flow__minimap-mask {
+    fill: rgba(139, 92, 246, 0.1);
+    stroke: rgba(139, 92, 246, 0.4);
+    stroke-width: 2;
+}
+
+:root[data-theme="dark"] .react-flow__minimap-node {
+    fill: #2a2a2a;
+    stroke: rgba(139, 92, 246, 0.3);
+}
+
+/* ===== BACKGROUND ===== */
+:root[data-theme="dark"] .react-flow__background {
+    background-color: #0a0a0a;
+}
+
+:root[data-theme="dark"] .react-flow__background-pattern {
+    stroke: rgba(139, 92, 246, 0.1);
+}
+
+/* ===== SELECTION BOX ===== */
+:root[data-theme="dark"] .react-flow__selection {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+/* ===== NODE SELECTION ===== */
+:root[data-theme="dark"] .react-flow__node.selected {
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+}
+
+/* ===== PANE (CANVAS AREA) ===== */
+:root[data-theme="dark"] .react-flow__pane {
+    cursor: default;
+}
+
+/* ===== ATTRIBUTION (if visible) ===== */
+:root[data-theme="dark"] .react-flow__attribution {
+    background-color: rgba(26, 26, 26, 0.8);
+    color: #94a3b8;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+:root[data-theme="dark"] .react-flow__attribution a {
+    color: #8b5cf6;
+}
+
+/* ===== LIGHT MODE DEFAULTS (ensure no conflicts) ===== */
+:root[data-theme="light"] .react-flow__edge-path {
+    stroke: #b1b1b7;
+}
+
+:root[data-theme="light"] .react-flow__edge.selected .react-flow__edge-path,
+:root[data-theme="light"] .react-flow__edge:hover .react-flow__edge-path {
+    stroke: #3b82f6;
+}
+
+:root[data-theme="light"] .react-flow__controls {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+:root[data-theme="light"] .react-flow__controls-button {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+:root[data-theme="light"] .react-flow__controls-button:hover {
+    background-color: #f8fafc;
+}
+
+:root[data-theme="light"] .react-flow__minimap {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}

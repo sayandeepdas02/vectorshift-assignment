@@ -1,0 +1,78 @@
+/* Additional Dark Mode Enhancements */
+
+/* Smooth theme transitions */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent transition on initial load */
+.no-transition * {
+    transition: none !important;
+}
+
+/* Dark mode input focus glow */
+:root[data-theme="dark"] input:focus,
+:root[data-theme="dark"] textarea:focus,
+:root[data-theme="dark"] select:focus {
+    box-shadow: 0 0 0 3px var(--accent-light), 0 0 8px rgba(139, 92, 246, 0.2);
+}
+
+/* Dark mode button enhancements */
+:root[data-theme="dark"] button:active {
+    transform: scale(0.98);
+}
+
+/* Enhance scrollbar in dark mode */
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+    box-shadow: 0 0 6px rgba(139, 92, 246, 0.3);
+}
+
+/* Dark mode selection */
+:root[data-theme="dark"] ::selection {
+    background-color: rgba(139, 92, 246, 0.3);
+    color: #f1f5f9;
+}
+
+/* Improve text readability in dark mode */
+:root[data-theme="dark"] {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Dark mode link styling */
+:root[data-theme="dark"] a {
+    color: var(--accent-primary);
+    transition: color 0.2s ease;
+}
+
+:root[data-theme="dark"] a:hover {
+    color: var(--accent-hover);
+    text-decoration-color: var(--accent-hover);
+}
+
+/* Subtle animation for theme toggle */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-theme] {
+    animation: fadeIn 0.3s ease-out;
+}

@@ -1,58 +1,82 @@
-# VectorShift Frontend Technical Assessment
+# VectorShift Technical Assignment - Pipeline Builder
 
-This repository contains the solution for the VectorShift Frontend Technical Assessment.
+A powerful, interactive node-based pipeline builder application. This project demonstrates a full-stack implementation featuring a React-based frontend for visual graph editing and a FastAPI backend for graph analysis.
 
-## Project Structure
+## 🚀 Project Overview
 
-- `frontend/`: React application using React Flow for the node editor.
-- `backend/`: FastAPI application handling graph analysis.
+This application serves as a technical assessment submission for VectorShift. It allows users to create, connect, and configure various types of nodes to build logic pipelines.
 
-## Features Implemented
+**Key Capabilities:**
+- **Visual Editor**: Drag-and-drop interface powered by React Flow.
+- **Node System**: Robust set of node types including Math, Logic, I/O, and specialized Text nodes.
+- **Intelligent Text Node**: Dynamic resizing and automatic variable detection (e.g., `{{input}}`) to generate handles.
+- **Graph Analysis**: Backend validation to detect Directed Acyclic Graphs (DAGs) and count nodes/edges.
+- **Polished UI**: Professional design system with consistent styling and responsiveness.
 
-1.  **Node Abstraction**: A centralized `BaseNode` component handles common layout, styling, and handle logic, allowing for rapid creation of new nodes.
-2.  **New Node Types**: Added `MathNode`, `DelayNode`, `BooleanNode`, `SliderNode`, and `ConditionNode`.
-3.  **Advanced Text Node**: Supports auto-resizing and creates dynamic input handles based on `{{variable}}` syntax.
-4.  **Professional Styling**: Clean, consistent UI using CSS Modules and a polished design system.
-5.  **Backend Integration**: The frontend sends the pipeline structure to the backend, which calculates the number of nodes/edges and checks if the graph is a Directed Acyclic Graph (DAG) using Kahn's Algorithm.
-
-## Setup Instructions
+## 🛠 Tech Stack
 
 ### Frontend
-
-1.  Navigate to the `frontend` directory:
-    ```bash
-    cd frontend
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the development server:
-    ```bash
-    npm start
-    ```
-    Access the app at `http://localhost:3000`.
+- **Framework**: React 18
+- **Core Library**: React Flow (Node-based UI)
+- **Styling**: Vanilla CSS / CSS Modules
+- **Build Tool**: Create React App (React Scripts)
 
 ### Backend
+- **Framework**: FastAPI (Python)
+- **Server**: Uvicorn (ASGI)
 
-1.  Navigate to the `backend` directory:
-    ```bash
-    cd backend
-    ```
-2.  Install dependencies (ensure Python is installed):
-    ```bash
-    pip install fastapi uvicorn
-    ```
-3.  Start the server:
-    ```bash
-    uvicorn main:app --reload --port 8000
+## 📦 Setup & Run Instructions
 
-    ```
-    The server will run at `http://localhost:8000`.
+### Prerequisites
+- Node.js (v16+)
+- Python (v3.9+)
 
-## Architecture Decisions
+### 1. Frontend Setup
+Navigate to the `frontend` directory:
+```bash
+cd frontend
+npm install
+npm start
+```
+The application will launch at `http://localhost:3000`.
 
--   **BaseNode Abstraction**: Used to follow the DRY principle. Instead of duplicating layout code in every node, `BaseNode` wraps the content and renders handles based on configuration.
--   **CSS Modules**: Chosen for scoped styling to prevent conflicts and keep styles close to components.
--   **Ad jacency List & Kahn's Algorithm**: Used in the backend for efficient DAG detection ($O(V+E)$).
--   **Dynamic Handles**: The `TextNode` parses input using Regex locally to update handles interactively.
+### 2. Backend Setup
+Navigate to the `backend` directory:
+```bash
+cd backend
+```
+
+It is recommended to use a virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+```
+
+Install dependencies and start the server:
+```bash
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+The backend API will be available at `http://localhost:8000`.
+
+## 🏗 Architecture & Design
+
+### Frontend Architecture
+- **Component Abstraction**: A `BaseNode` component strictly adheres to DRY principles, encapsulating common logic (handles, styling, layout) for all node types.
+- **State Management**: React Flow's internal state is leveraged for graph data, with local component state for individual node logic.
+- **Dynamic Logic**: The Text Node implements regex parsing to dynamically generate input handles based on user input, enabling "prompt template" like functionality.
+
+### Backend Logic
+- **Graph Validation**: Implements **Kahn's Algorithm** ($O(V+E)$) to efficiently detect cycles and determine if the constructed pipeline is a valid DAG (Directed Acyclic Graph).
+
+## 📂 Repository Structure
+
+- `frontend/`: Contains the React source code, components, and styling.
+- `backend/`: Contains the FastAPI application and logic.
+
